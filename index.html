@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <style>
+        body {
+            background: #7F7FD5;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            font-family: "DejaVu Sans";
+        }
+        h3, h5 {
+            text-align:center;
+        }
+        .btn {
+            border: none;
+            padding:14px;
+            background: green;
+            color: white;
+
+        }
+
+        .text-input {
+            padding:14px;
+            border: none;
+        }
+
+        .color-1 {
+            background-color: #29B6F6!important;
+        }
+        .color-2 {
+            background-color: #dc3545!important;
+        }
+        .color-3 {
+            background-color: #ffc107!important;
+        }
+        .color-4 {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<h3>Simple Css and Javascript Notification
+    <br>
+    <br>
+    <input type="text" class="text-input" id="message" value="Hello World">
+    <br><br>
+
+    <input type="button" value="Show Notification Default" class="btn color-4" onclick="showNotification('default')">
+
+    <input type="button" value="Show Notification Success" class="btn" onclick="showNotification('success')">
+
+    <input type="button" value="Show Notification Warning" class="btn color-3" onclick="showNotification('warning')">
+
+    <input type="button" value="Show Notification Danger" class="btn color-2" onclick="showNotification('danger')">
+
+    <input type="button" value="Show Notification Info" class="btn color-1" onclick="showNotification('info')">
+</h3>
+
+<h5>For more info visit <a href="https://github.com/spandey2405/boot-notify">BootNotify-Github</a> </h5>
+
+<script src="https://s3.ap-southeast-1.amazonaws.com/warezgrp/bootnotify.min.js"></script>
+<script>
+    var bootnotify = new BootNotify();
+    function showNotification(type) {
+        var message = document.getElementById('message').value;
+        bootnotify.show(message, type)
+
+    }
+</script>
+</body>
+</html>
